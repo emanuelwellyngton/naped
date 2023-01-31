@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noped</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/body.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home_picked-posts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/last-posts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <header id="header"></header>
+    <main id="home">
+        <section id="home_slogan">
+            <h3 id="slogan_title">Mundo nerd? Naped!</h3>
+            <p id="slogan_sub">O Naped pode ser sua fonte de informações sobre o mundo nerd e outros assuntos relacionados.</p>
+        </section>
+        <section id="highlights">
+            {% for post in posts %}
+                    {% if post["id"] == 1 %}
+                    <a href="post/{{ post['id'] }}"><div id="highlight_01" style="background-image: linear-gradient(360deg, #13131F 0%, rgba(19, 19, 31, 0) 100%), url({{ post['cover'] }})">
+                        <p id="highlight_01--category" class="news_category">{{ post["category"] }}</p>
+                        <h3 id="highlight_01--title" class="news_title">{{ post['title'] }}</h3>
+                    </div></a>
+                    {% endif %}
+                {% endfor %}
+            <ul id="picked-posts">
+                {% for post in top_posts %}
+                <li class="post">
+                    <div class="post_bg" style="background-image: linear-gradient(360deg, #13131F 0%, rgba(19, 19, 31, 0) 100%), url({{ post['posts']['cover'] }})">
+                        <p class="picked_categoria">{{ post['posts']['category'] }}</p>
+                    </div>
+                    <div class="post_main">
+                        <h3 class="news_title picked_title">{{ post['posts']["title"] }}</h3>
+                        <p class="post_date picked_date">{{ post['posts']|date_format }}</p>
+                        <a href="post/{{ post['id'] }}" class="post_btn">Ler notícia</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+    <section id="last-posts">
+        <h3 id="last-posts_sec-ttl">Notícias mais recentes</h3>
+        <ul id="last-posts_list">
+            {% for post in posts%}
+                {% if loop.index < 5 %}
+                <a href="post/{{ post['id'] }}"><li class="last-posts_item" style="background-image: linear-gradient(360deg, #13131F 0%, rgba(19, 19, 31, 0) 100%), url({{ post['cover'] }})">
+                    <p class="last-posts_category">{{ post['category'] }}</p>
+                    <h3 class="last-posts_title">{{ post['title'] }}</h3>
+                </li></a>
+                {% endif  %}
+            {% endfor %}
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="{{ url_for('static', filename='get_posts.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='header_footer.js') }}"></script>
+</body>
+</html>

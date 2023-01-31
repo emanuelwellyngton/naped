@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/body.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <title>{{ post['title'] }} | Napad</title>
+</head>
+<body>
+    <header id="header"></header>
+    <main>
+        <h1 class="post_title">{{ post['title'] }}</h1>
+        <p class="post_descrition">{{ post['descrition'] }}</p>
+        <div class="post_date_cat">
+            <p class="post_date">{{ date }}</p>
+            <p class="post_category">{{ post['category'] }}</p>
+        </div>
+        <img class="post_cover" src="{{ post['cover'] }}" alt="imagem do post">
+        <div class="post_content">{{ post['content'] }}</div>
+    </main>
+    <footer id="footer"></footer>
+    <script src="{{ url_for('static', filename='incorporate_html.js') }}"></script>
+    <script src="{{ url_for('static', filename='header_footer.js') }}"></script>
+</body>
+</html>

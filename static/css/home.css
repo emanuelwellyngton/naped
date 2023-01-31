@@ -1,0 +1,55 @@
+#home_slogan {
+    margin-bottom: 48px;
+}
+
+#slogan_title {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+
+#slogan_sub {
+    font-weight: 500;
+    color: var(--white-200);
+    font-size: 14px;
+    line-height: 140%;
+}
+
+#highlights {
+    margin-bottom: 46.57px;
+}
+
+#highlight_01 {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+    padding: 5px;
+    margin-bottom: 48px;
+    display: grid;
+}
+
+.news_category {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: var(--white);
+    background-color: var(--purple-ligth);
+    border-radius: 3px;
+    padding: 2px 22px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.news_title {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    color: var(--white);
+    font-size: 14px;
+    text-align: start;
+    align-self: flex-end;
+}

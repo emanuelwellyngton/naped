@@ -1,0 +1,42 @@
+#header {
+    display: grid;
+    justify-content: space-between;
+    padding: 26px 0;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+    margin-bottom: 24px;
+}
+
+#header_menu {
+    display: none;
+}
+
+.logo {
+    color: var(--purple-ligth);
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+}
+
+#menu_icon {
+    content: url(../img/menu.svg);
+    height: 24px;
+    width: 24px;
+    margin-left: auto;
+}
+
+#acount {
+    width: 100%;
+    font-family: 'Lexend Decas', sans-serif;
+    color: var(--white);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    border: 1px solid var(--purple-ligth);
+    border-radius: 30px;
+    text-align: center;
+    padding: 8px 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
